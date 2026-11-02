@@ -1,0 +1,358 @@
+/* ==========================================================================
+   MediTrack - Showcase, Features & Product Grid Components
+   ========================================================================== */
+.view-all-link {
+  background: none;
+  border: none;
+  color: var(--teal-700);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.view-all-link:hover {
+  color: var(--teal-900);
+  transform: translateX(3px);
+}
+
+/* Category Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.25rem;
+}
+
+.category-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.category-card:hover,
+.category-card.active {
+  border-color: var(--teal-600);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(180deg, #ffffff 0%, var(--teal-50) 100%);
+}
+
+.category-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--teal-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.category-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--teal-900);
+}
+
+.category-card-count {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  border-color: var(--teal-600);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--teal-900);
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: var(--slate-700);
+  line-height: 1.6;
+}
+
+/* Catalogue Header & Controls */
+.catalogue-header {
+  margin-bottom: 1.25rem;
+}
+
+.filter-controls select {
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--slate-200);
+  background: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: var(--teal-600);
+}
+
+.active-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.active-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--teal-100);
+  color: var(--teal-900);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.results-count {
+  font-size: 0.85rem;
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+/* Product Grid & Card */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.product-image-wrap {
+  position: relative;
+  height: 190px;
+  background: var(--slate-100);
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-badges {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.badge-discount {
+  background: var(--coral-500);
+  color: #fff;
+}
+
+.badge-rx {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.badge-otc {
+  background: #059669;
+  color: #fff;
+}
+
+.product-details {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-category {
+  font-size: 0.75rem;
+  color: var(--teal-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.product-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--teal-900);
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.product-generic {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  margin-bottom: 0.5rem;
+}
+
+.product-dosage {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--slate-100);
+  color: var(--slate-700);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 0.85rem;
+}
+
+.product-card-bottom {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--slate-200);
+}
+
+.product-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.current-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--teal-900);
+}
+
+.mrp-price {
+  font-size: 0.85rem;
+  color: var(--slate-500);
+  text-decoration: line-through;
+}
+
+.rating-pill {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.btn-add-cart {
+  width: 100%;
+  background: var(--teal-50);
+  color: var(--teal-900);
+  border: 1px solid var(--teal-600);
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-add-cart:hover {
+  background: var(--teal-700);
+  color: #fff;
+}
+
+.qty-controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--teal-700);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.qty-number {
+  font-weight: 700;
+  font-size: 0.9rem;
+}

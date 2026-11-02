@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediTrack — Premium Digital Pharmacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="hero.css" />
+    <link rel="stylesheet" href="components.css" />
+    <link rel="stylesheet" href="modals.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <!-- Header & Navigation Bar -->
+    <header class="site-header" id="header">
+      <div class="header-container">
+        <a href="#home" class="brand-logo" aria-label="MediTrack">
+          <span class="logo-icon">✚</span>
+          <span class="logo-text">Medi<span class="logo-accent">Track</span></span>
+        </a>
+        <div class="search-bar-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            id="global-search"
+            placeholder="Search medicines, vitamins, wellness..."
+            aria-label="Search medicines"
+          />
+        </div>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="#home" class="nav-link active" data-tab="home">Home</a>
+          <a href="#catalogue" class="nav-link" data-tab="catalogue">Medicines</a>
+          <a href="#categories" class="nav-link" data-tab="categories">Categories</a>
+          <a href="#about" class="nav-link" data-tab="about">About</a>
+        </nav>
+        <div class="header-actions">
+          <button id="rx-upload-trigger" class="btn btn-outline" aria-label="Upload Rx">
+            <span>📄</span> Upload Rx
+          </button>
+          <button id="cart-drawer-trigger" class="btn-cart" aria-label="Cart">
+            <span>🛒</span><span class="cart-badge" id="cart-badge-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Asymmetric Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-tag">✨ Licensed Digital Pharmacy & Healthcare</div>
+            <h1 class="hero-title">
+              Healthcare,<br />
+              <span class="hero-highlight">Made Simple.</span>
+            </h1>
+            <p class="hero-subtext">
+              Your trusted destination for everyday healthcare essentials. 100% genuine products, verified pharmacists,
+              and doorstep delivery within 2 hours.
+            </p>
+            <div class="hero-cta-group">
+              <button class="btn btn-primary btn-lg" id="hero-shop-btn">Shop Medicines</button>
+              <button class="btn btn-secondary btn-lg" id="hero-rx-btn">Upload Prescription</button>
+            </div>
+            <div class="hero-trust-metrics">
+              <div class="trust-metric-item"><strong>100%</strong><span>Genuine Medicines</span></div>
+              <div class="trust-divider"></div>
+              <div class="trust-metric-item"><strong>2 Hours</strong><span>Express Delivery</span></div>
+              <div class="trust-divider"></div>
+              <div class="trust-metric-item"><strong>4.9 ★</strong><span>TrustScore</span></div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-card">
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+                alt="Doctor consulting medicine"
+                class="hero-img"
+              />
+              <div class="floating-badge badge-top-left"><span>⚡</span> Express 2-Hour Delivery</div>
+              <div class="floating-badge badge-bottom-right"><span>🛡️</span> Verified Pharmacists</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Category Showcase Tiles -->
+      <section class="categories-section" id="categories">
+        <div class="section-container">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Shop by Category</h2>
+              <p class="section-subtitle">Explore curated essentials for everyday health and vitality</p>
+            </div>
+            <button class="view-all-link" id="reset-category-btn">View All Products →</button>
+          </div>
+          <div class="category-grid" id="category-grid"></div>
+        </div>
+      </section>
+
+      <!-- Medicine Product Catalogue -->
+      <section class="catalogue-section" id="catalogue">
+        <div class="section-container">
+          <div class="section-header catalogue-header">
+            <div>
+              <h2 class="section-title" id="catalogue-heading">All Medicines & Wellness</h2>
+              <p class="section-subtitle" id="catalogue-subheading">
+                Showing verified medicines and clinical essentials
+              </p>
+            </div>
+            <div class="filter-controls">
+              <select id="sort-select" aria-label="Sort products">
+                <option value="default">Featured / Bestsellers</option>
+                <option value="price_asc">Price: Low to High</option>
+                <option value="price_desc">Price: High to Low</option>
+                <option value="rating">Top Rated (4.8+)</option>
+                <option value="name">Product Name (A-Z)</option>
+              </select>
+            </div>
+          </div>
+          <div class="active-filter-bar" id="active-filter-bar">
+            <span class="active-category-pill" id="active-category-indicator">All Products</span>
+            <span class="results-count" id="results-count">16 products found</span>
+          </div>
+          <div class="product-grid" id="product-grid" role="region" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Why Choose MediTrack Features -->
+      <section class="features-section" id="about">
+        <div class="section-container">
+          <div class="section-header text-center">
+            <h2 class="section-title">Why Families Trust MediTrack</h2>
+            <p class="section-subtitle">Highest standards of safety, authenticity, and cold-chain compliance</p>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>100% Genuine Guarantee</h3>
+              <p>Directly sourced from certified pharmaceutical manufacturers with batch verification.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">👨‍⚕️</div>
+              <h3>Pharmacist Review</h3>
+              <p>Qualified healthcare professionals double-check every prescription order for dosage safety.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">❄️</div>
+              <h3>Cold-Chain Logistics</h3>
+              <p>Temperature-sensitive formulations transported in specialized insulated packaging.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>2-Hour Express Delivery</h3>
+              <p>Rapid dispatch from local fulfillment centers so you never miss critical doses.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <aside class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true">
+      <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="cart-drawer-header">
+          <h3 id="cart-title">Your Pharmacy Cart</h3>
+          <button class="drawer-close-btn" id="cart-close-btn" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="free-shipping-bar" id="shipping-progress-wrap">
+          <div class="shipping-text" id="shipping-progress-text">Add $35.00 for FREE Delivery</div>
+          <div class="progress-track"><div class="progress-fill" id="shipping-progress-fill"></div></div>
+        </div>
+        <div class="cart-items-container" id="cart-items-list"></div>
+        <div class="cart-drawer-footer" id="cart-footer">
+          <div class="bill-row"><span>MRP Total</span><span id="cart-mrp">$0.00</span></div>
+          <div class="bill-row discount-row"><span>Savings Discount</span><span id="cart-discount">-$0.00</span></div>
+          <div class="bill-row"><span>Delivery Fee</span><span id="cart-delivery">$0.00</span></div>
+          <div class="bill-row total-row"><span>To Pay</span><span id="cart-total">$0.00</span></div>
+          <button class="btn btn-primary btn-block" id="proceed-checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Native Accessible Dialogs -->
+    <dialog class="modal" id="rx-modal"><div class="modal-dialog" id="rx-modal-body"></div></dialog>
+    <dialog class="modal" id="checkout-modal"><div class="modal-dialog" id="checkout-modal-body"></div></dialog>
+    <dialog class="modal" id="order-success-modal">
+      <div class="modal-dialog text-center" id="success-modal-body"></div>
+    </dialog>
+    <div class="toast-container" id="toast-container" aria-live="assertive"></div>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col brand-col">
+          <div class="brand-logo footer-logo">
+            <span class="logo-icon">✚</span>
+            <span class="logo-text">Medi<span class="logo-accent">Track</span></span>
+          </div>
+          <p class="footer-tagline">
+            Premium Digital Pharmacy & Healthcare Hub. Trusted medicines, clinical reliability, and genuine care right
+            to your home.
+          </p>
+          <div class="regulatory-tag">MCA Academic Web Programming Project</div>
+        </div>
+        <div class="footer-col">
+          <h4>Healthcare Categories</h4>
+          <ul>
+            <li><a href="#catalogue" data-cat="Pain Relief">Pain Relief</a></li>
+            <li><a href="#catalogue" data-cat="Vitamins">Vitamins & Supplements</a></li>
+            <li><a href="#catalogue" data-cat="Personal Care">Dermatological Care</a></li>
+            <li><a href="#catalogue" data-cat="Healthcare Devices">Diagnostic Devices</a></li>
+            <li><a href="#catalogue" data-cat="First Aid">First Aid & Antiseptics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trust & Compliance</h4>
+          <ul>
+            <li><a href="#about">100% Genuine Sourcing</a></li>
+            <li><a href="#about">Pharmacist Verification</a></li>
+            <li><a href="#about">Cold-Chain Logistics</a></li>
+            <li><a href="#about">Privacy & Medical Safety</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Delivery Support</h4>
+          <p class="support-text">📞 24/7 Helpline: <strong>1800-419-MEDS</strong></p>
+          <p class="support-text">📍 Express delivery active in your area</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p>&copy; 2026 MediTrack Pharmacy Technologies. Built with Semantic HTML5, CSS3, & Vanilla JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
