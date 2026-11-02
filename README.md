@@ -146,21 +146,21 @@ python test_app.py
 ============================================================
  MediTrack - Starting Integration Tests
 ============================================================
-  [PASS] GET / -> index.html served successfully (200 OK)
-  [PASS] GET /style.css -> CSS design system served (200 OK)
-  [PASS] GET /app.js -> Vanilla JS app engine served (200 OK)
-  [PASS] GET /api/categories -> Returned 6 categories (200 OK)
-  [PASS] GET /api/products -> Returned 16 medicines (200 OK)
-  [PASS] GET /api/products?category=Vitamins -> Filter verified (200 OK)
-  [PASS] GET /api/products?search=Paracetamol -> Search verified (200 OK)
-  [PASS] GET /api/products?sort=price_asc -> Price sorting verified (200 OK)
-  [PASS] DELETE /api/cart -> Cart initialized/cleared (200 OK)
+  [PASS] GET / -> index.html served successfully  
+  [PASS] GET /style.css -> CSS design system served  
+  [PASS] GET /app.js -> Vanilla JS app engine served  
+  [PASS] GET /api/categories -> Returned 6 categories  
+  [PASS] GET /api/products -> Returned 16 medicines  
+  [PASS] GET /api/products?category=Vitamins -> Filter verified  
+  [PASS] GET /api/products?search=Paracetamol -> Search verified  
+  [PASS] GET /api/products?sort=price_asc -> Price sorting verified  
+  [PASS] DELETE /api/cart -> Cart initialized/cleared  
   [PASS] POST /api/cart (Subtotal < $35) -> Delivery fee $4.99 calculated correctly
   [PASS] POST /api/cart (Subtotal >= $35) -> FREE delivery threshold verified
-  [PASS] POST /api/prescriptions/upload -> Rejected invalid file format (.exe) (400 Bad Request)
-  [PASS] POST /api/prescriptions/upload -> Validated and stored Rx #2 (200 OK)
-  [PASS] POST /api/orders -> Rx prescription required check verified (400 Bad Request)
-  [PASS] POST /api/orders -> Order confirmed (200 OK)
+  [PASS] POST /api/prescriptions/upload -> Rejected invalid file format (.exe) 
+  [PASS] POST /api/prescriptions/upload -> Validated and stored Rx #2  
+  [PASS] POST /api/orders -> Rx prescription required check verified 
+  [PASS] POST /api/orders -> Order confirmed  
   [PASS] Cart empty verification -> Cart emptied after checkout
 ============================================================
  ALL 12 INTEGRATION TESTS PASSED SUCCESSFULLY!
